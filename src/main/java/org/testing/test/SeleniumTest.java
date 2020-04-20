@@ -3,7 +3,6 @@ package org.testing.test;
 import java.io.File;
 import java.io.IOException;
 
-import org.apache.catalina.LifecycleException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -22,7 +21,7 @@ public class SeleniumTest {
 	private WebDriver driver;
 
 	@BeforeClass
-	public static void createAndStartService() throws IOException, LifecycleException {
+	public static void createAndStartService() throws IOException{
 		
 		System.setProperty("webdriver.chrome.driver", new File("src/main/resources/chromedriver.exe").toString());
 		service = new ChromeDriverService.Builder().usingDriverExecutable(new File("src/main/resources/chromedriver.exe")).usingAnyFreePort().build();
@@ -31,7 +30,7 @@ public class SeleniumTest {
 	}
 
 	@AfterClass
-	public static void stopService() throws LifecycleException {
+	public static void stopService() {
 		service.stop();
 	}
 	
