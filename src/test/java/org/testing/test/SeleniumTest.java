@@ -24,7 +24,7 @@ public class SeleniumTest {
 	public static void createAndStartService() throws IOException{
 		
 		System.setProperty("webdriver.chrome.driver", new File("src/main/resources/chromedriver.exe").toString());
-		service = new ChromeDriverService.Builder().usingDriverExecutable(new File("src/test/resources/chromedriver.exe")).usingAnyFreePort().build();
+		service = new ChromeDriverService.Builder().usingDriverExecutable(new File("src/test/resources/chromedriver")).usingAnyFreePort().build();
 		service.start();
 		
 	}
